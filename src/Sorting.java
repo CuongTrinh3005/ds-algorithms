@@ -25,6 +25,7 @@ public class Sorting {
 
     static int[] bubbleSortOpt(int[] arr){
         boolean swapped = true;
+        // swapped is false means elements already sorted
         while (swapped){
             swapped = false;
             for(int i=1; i< arr.length; i++){
