@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Sorting {
     static int[] getArr(){
         return new int[]{35, 10, 31, 11, 26, 5, 40, 2};
