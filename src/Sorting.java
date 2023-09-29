@@ -188,6 +188,21 @@ public class Sorting {
         }
     }
 
+    public static int binarySearch(int[] arr, int n, int value){
+        int left = 0, right = n - 1, mid;
+        while(left <= right){
+            mid = (left + right) / 2;
+            if(value == arr[mid])   return mid;
+            else if (value < arr[mid]) {
+                // new scope will be left -> mid-1
+                right = mid - 1;
+            }
+            else left = mid + 1;
+        }
+
+        return -1;
+    }
+
     public static void main(String[] args) {
         int[] bubbleSortedArr = bubbleSort(getArr());
         System.out.println("Bubble sorting result: " + display(bubbleSortedArr));
@@ -212,5 +227,8 @@ public class Sorting {
         arr = getArr();
         int[] mergeSortedResult = mergeSort(arr, 0, arr.length - 1);
         System.out.println("Merge sort recursion result: " + display(mergeSortedResult));
+
+        int key = 40;
+        System.out.println(String.format("Position of %s is: ", key) + binarySearch(arr, arr.length, key));
     }
 }
